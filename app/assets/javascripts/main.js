@@ -2,12 +2,11 @@ $(document).ready(function() {
 
 
     $('#get_popular_purchases_button').click(function(e) {
-      data = { bob_key: "bob_value" };
+      payload = { username: $('#username_field').val() };
 
-      $.ajax({
-        method: "GET",
+      $.get({
         url: "/popular_purchases",
-        data: { username: "whatever" },
+        data: payload,
         success: function(data, textStatus, jqXHR) {
           console.log("returned data = " + JSON.stringify(data, undefined, 2))
           $('#popular_purchases_display').html(data["bob_key"]);

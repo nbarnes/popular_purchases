@@ -4,8 +4,14 @@ class PurchasesController < ApplicationController
   respond_to :json
 
   def popular_purchases_index
-    http://74.50.59.155:6000/api/users
-
+    if params[:username].blank?
+     @data = "Cannot look up blank username"
+    else
+      user = User.find(:username, params[:username])
+      @data = user ? params[:username] : "User with username of #{params[:username]} was not found."
+    end
   end
 
 end
+
+

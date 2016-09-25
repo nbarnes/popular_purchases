@@ -11,6 +11,7 @@ gem 'haml'
 
 gem 'responders'
 gem 'figaro'
+gem 'httparty'
 
 group :development, :test do
   gem 'quiet_assets'
